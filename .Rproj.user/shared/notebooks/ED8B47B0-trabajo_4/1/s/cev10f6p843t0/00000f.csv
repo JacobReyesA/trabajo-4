@@ -1,0 +1,8 @@
+"0","#| label: fig-gdp2"
+"0","#| fig-cap: ""Nivel de acuerdo con restringir el ingreso de inmigrantes"""
+"0","proc_data %>% ggplot(aes(x=acuerdo_restriccion_inmigrantes)) +"
+"0","  geom_bar(fill = ""red"") +"
+"0","  labs(title = ""Nivel de acuerdo con restringir el ingreso de inmigrantes al país"","
+"0","       x = ""Nivel de acuerdo"", #Creo que el título del gráfico es suficientemente claro para dejar esta etiqueta así de simple"
+"0","       y = ""Frecuencia"") +"
+"0","  theme_bw()"

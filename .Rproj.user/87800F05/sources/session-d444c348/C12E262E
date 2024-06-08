@@ -3,7 +3,7 @@
     "path": "~/GitHub/trabajo-4/ipo/procesamiento/Preparacion_t4.R",
     "project_path": "ipo/procesamiento/Preparacion_t4.R",
     "type": "r_source",
-    "hash": "3755728044",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1717722463416.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "120,0",
-        "scrollLine": "101"
+        "cursorPosition": "119,48",
+        "scrollLine": "105"
     },
     "folds": "",
-    "lastKnownWriteTime": 1717812308,
+    "lastKnownWriteTime": 1717816589,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1717812308519,
+    "last_content_update": 1717816589280,
     "read_only": false,
     "read_only_alternatives": []
 }

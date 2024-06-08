@@ -1,0 +1,67 @@
+---
+title: "Medios Masivos de Comunicación y su Influencia en la Percepción de los Chilenos sobre la Ingmiración"
+format: html
+editor: visual
+bibliography: percepcion-de-inmigracion.bib
+link-citations: TRUE
+---
+
+*Por: Jacob Reyes A.*
+
+## Introducción
+
+En Chile el fenómeno de inmigración no es algo nuevo, ocurre desde hace más de un siglo, sin embargo nunca con un flujo tan intenso como el de los últimos años. Las estadísticas del Instituto Nacional de Estadísticas (INE) en conjunto con el Servicio Nacional de Migraciones (SERMIG) estimaron que para el año 2022 había un total de 1,625,074 personas extranjeras residiendo en Chile [@ine2022]. Según estas estadísticas migratorias los colectivos principales de la población extranjera son de Venezuela (32.8%), Perú (15.4%) y Colombia (11.7%) seguidos por Haití (11.4%), Bolivia (9.1%) y Argentina (4.9%).
+
+El 2019 la Alianza Comunicación y Pobreza realizó el seminario Migración y Opinión Pública. En él el académico Roberto Méndez presentó datos relacionados a la opinión pública sobre la migración los cuales demuestran que Chile es el país con la percepción más severa sobre los migrantes, en síntesis los chilenos consideran esta ola de inmigración como una amenaza a la identidad nacional, al empleo, seguridad y al acceso de los servicios entregados por el Estado [ver @fundaciónsuperacióndelapobreza2019; también @escueladegobierno2019].
+
+¿Cómo tratan este tema los medios de comunicación en el país? Primero, es relevante señalar que los medios tienen efectos significativos en la sociedad, si bien el nivel de influencia que tienen sobre la ciudadanía puede variar con el tiempo, investigaciones han demostrado que es en los tiempos de crisis donde éstos demuestran ser mucho más influyentes [@rubioOpinionPublicaMedios2009]. En el país los medios de comunicación (diarios, televisión, radio, etc.) abordan la migración desde distintos puntos de vista, no obstante, en su mayoría lo hacen considerando al migrante como un "otro", un forastero que viene a invadir, transformar la sociedad a la que llegan, creando así una mala representación de los migrantes. [@rizik2019].
+
+Además de esta negativa representación que hacen los medios de comunicación sobre los migrantes, existe evidencia de que los periodos con mayor actividad de menciones discriminatorias en redes sociales se relacionan con eventos noticiosos sobre la población extranjera [@galvezBAROMETROPERCEPCIONMIGRACION2020].
+
+Considerando lo anteriormente expuesto es que en el presente trabajo se pretende investigar como la percepción de los chilenos sobre la inmigración es influenciada por la confianza que estos tienen en los medios de comunicación, con la hipótesis: **A mayor confianza en los medios de comunicación, la percepción negativa de los chilenos sobre los inmigrantes aumenta**. Para llevar a cabo este estudio se utilizarán los datos de la encuesta LAPOP aplicada el año 2023 en el territorio nacional.
+
+## Análisis descriptivo
+
+A continuación se presentará un breve análisis descriptivo. Como se mencionó en la introducción los datos utilizados fueron los generados por la encuesta LAPOP que se aplicó el año 2023 en Chile. Se escogieron siete variables para el presente análisis: Confianza en los medios de comunicación, las otras seis se pueden dividir en dos grupos, por un lado: nivel de acuerdo con que el estado ofrezca servicios sociales (asistencia de salud, educación, vivienda, etc.) a venezolanos, españoles e inmigrantes y por otro lado: nivel de molestia de tener un vecino venezolano, español o inmigrante.
+
+Ahora se cargará los paquetes a utilizar y la base de datos con las variables ya operacionalizadas.
+
+```{r}
+pacman::p_load(dplyr, sjmisc, car, sjlabelled, stargazer, haven, kableExtra, summarytools, ggplot2, texreg, ggpubr)
+load("ipo/input/data-proc/variables_operacionalizadas.RData")
+```
+
+En la siguiente tabla descriptiva se pueden apreciar las medidas de tendencia central de las variables escogidas para analizar. En cuanto a la variable de confianza en los medios de comunicación (sus categoría de respuesta iba de 1 a 7, siendo 1 nada de confianza y 7 mucha confianza) se puede observar que en promedio existe una desconfianza de los chilenos hacia estos, cabe señalar que solo un 4.3% de la muestra señaló confiar mucho en los medios de comunicación. En cuanto al grupo de variables del nivel de acuerdo con que el gobierno ofrezca servicios sociales (sus categorías de respuesta van de 1 a 5, siendo 1 muy en desacuerdo y 5 muy de acuerdo) a los extranjeros que vienen a residir al país existen promedios parecidos para los tres casos: Venezolanos (presenta un promedio de 3) españoles (2.9) e inmigrantes (3.3) considerando las categorías de respuesta se puede decir existe indiferencia (ni de acuerdo ni en acuerdo) por parte de los ciudadanos con respecto a este tópico, sin embargo es relevante señalar que la moda en las tres variables es la categoría de respuesta 4 (algo de acuerdo) y la segunda categoría de respuesta con más frecuencia es la 1 (muy en desacuerdo). En cuanto al grupo de variable de respuesta del nivel de molestia (sus categorías de respuesta iban de 0 a 4, siendo 0 ninguna molestia y 3 mucha molestia), en la tabla se puede apreciar que en los tres casos en promedio para los chilenos no sería molesto tener un vecino venezolano (0.8), español (0.8) o inmigrante (0.5). También se puede observar que para estas últimas seis variables existe un gran numero de casos perdidos, esto es porque estas preguntas se le aplicaron solo a un tercio de la muestra. En síntesis, observando esta tabla se puede decir que los chilenos presentan una baja confianza con sus medios masivos de comunicación, y presentan una "buena" (las comillas son porque no creo que se pueda definir esto solo con estas variables) percepción sobre la población extranjera del país independiente de su país de origen.
+
+```{r}
+summarytools::dfSummary(proc_data, plain.ascii = FALSE)
+view(dfSummary(proc_data, headings=FALSE))
+```
+
+siguiendo la visualización de datos ahora se presentarán en gráficos univariados dos variables principales de la investigación.
+
+En la @fig-gdp se puede observar la variable "Confianza en los medios de comunicación" graficada. En este gráfico se puede apreciar que la barra más alta es la primera (o sea la del valor de categoría de respuesta 1) es decir que los chilenos en su mayoría no confían en los medios masivos de comunicaciónd el país.
+
+```{r}
+#| label: fig-gdp
+#| fig-cap: "Confianza en los medios de comunicación"
+ggplot(data = proc_data, aes(conf_mcm)) +
+  geom_bar(fill="blue")+
+  labs(title = "Confianza en los medios masivos de comunicación", 
+       x = "Confianza en los medios masivos de comunicación",
+       y = "Frecuencia")
+```
+
+A continuación se presenta la @fig-gdp2, esta corresponde a la variable "Nivel de acuerdo con que el gobierno ofrezca servicios sociales a inmigrantes". En este gráfico, considerando las categorías de respuesta de esta variable (1 Muy en desacuerdo a 5 Muy de acuerdo) se puede observar que la categoría con más frecuencia es la número 4 (Algo de acuerdo). Seguido por la categoría muy de acuerdo y la tercera categoría con más observaciones es la número 1 (Muy en desacuerdo). En síntesis, con este gráfico se puede apreciar que existe mayor acuerdo a que el gobierno ofrezca servicios sociales a los inmigrantes habitantes del país.
+
+```{r}
+#| label: fig-gdp2
+#| fig-cap: "Nivel de acuerdo con que el gobierno ofrezca servicios sociales a Inmigrantes"
+
+ggplot(data = proc_data, aes(s_sociales_inmg)) +
+  geom_bar(fill="blue")+
+  labs(title = "Nivel de acuerdo con que el gobierno ofrezca servicios sociales a INMIGRANTES", 
+       x = "Nivel de acuerdo",
+       y = "Frecuencia")
+
+```

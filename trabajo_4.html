@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Cómo afecta la edad en la percepción de la inmigración en Chile el año 2021</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="trabajo_4_files/libs/clipboard/clipboard.min.js"></script>
+<script src="trabajo_4_files/libs/quarto-html/quarto.js"></script>
+<script src="trabajo_4_files/libs/quarto-html/popper.min.js"></script>
+<script src="trabajo_4_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="trabajo_4_files/libs/quarto-html/anchor.min.js"></script>
+<link href="trabajo_4_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="trabajo_4_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="trabajo_4_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="trabajo_4_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="trabajo_4_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Cómo afecta la edad en la percepción de la inmigración en Chile el año 2021</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><em>Por: Jacob Reyes A.</em></p>
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>En Chile el fenómeno de inmigración no es algo nuevo, ocurre desde hace más de un siglo, sin embargo nunca con un flujo tan intenso como el de los últimos años. Las estadísticas del Instituto Nacional de Estadísticas (INE) en conjunto con el Servicio Nacional de Migraciones (SERMIG) estimaron que para el año 2022 había un total de 1,625,074 personas extranjeras residiendo en Chile <span class="citation" data-cites="ine2022">(<a href="#ref-ine2022" role="doc-biblioref">INE 2022</a>)</span>. Según estas estadísticas migratorias los colectivos principales de la población extranjera son de Venezuela (32.8%), Perú (15.4%) y Colombia (11.7%) seguidos por Haití (11.4%), Bolivia (9.1%) y Argentina (4.9%).</p>
+<p>El 2019 la Alianza Comunicación y Pobreza realizó el seminario Migración y Opinión Pública. En él el académico Roberto Méndez presentó datos relacionados a la opinión pública sobre la migración los cuales demuestran que Chile es el país con la percepción más severa sobre los migrantes, en síntesis los chilenos consideran esta ola de inmigración como una amenaza a la identidad nacional, al empleo, seguridad y al acceso de los servicios entregados por el Estado <span class="citation" data-cites="fundaciónsuperacióndelapobreza2019 escueladegobierno2019">(ver <a href="#ref-fundaciónsuperacióndelapobreza2019" role="doc-biblioref">Fundación Superación de la Pobreza 2019</a>; también <a href="#ref-escueladegobierno2019" role="doc-biblioref">Escuela de Gobierno 2019</a>)</span></p>
+<p>Según un estudio del año 2017 acerca de la xenofobia realizado en las regiones del Biobío y Metropolitana, existe evidencia de que a mayor edad mayor será la percepción negativa que se tenga sobre los inmigrante lo que resulta en actitudes xenofóbicas por parte de los nacionales hacia los colectivos extranjeros que viven en el país <span class="citation" data-cites="tejeda2017">(<a href="#ref-tejeda2017" role="doc-biblioref">Tejeda 2017</a>)</span>. En base a estos hallazgos se pretende en el presente estudio analizar la asociación entre variables similares a las del estudio de Tejeda para ver como se comportan en el año 2022.</p>
+<p>Considerando lo anteriormente expuesto es que en esta breve investigación se busca dilucidar como la percepción de los chilenos sobre la inmigración varía según la edad de los ciudadanos, con la hipótesis: <strong>A mayor edad, la percepción negativa de los chilenos sobre los inmigrantes aumenta.</strong> Para llevar a cabo este estudio se consultarán los datos de El Estudio Longitudinal Social de Chile (ELSOC) aplicado en el 2021.</p>
+</section>
+<section id="análisis-descriptivo" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-descriptivo">Análisis descriptivo</h2>
+<p>A continuación se presentará un breve análisis descriptivo. Cómo ya fue mencionado en la introducción los datos utilizados fueron los generados por la encuesta ELSOC el año 2022 en Chile. Se escogieron nueve variables para llevar a cabo el análisis: Edad y diferentes variables que miden las actitudes que tienen los chilenos sobre la inmigración, destacando entre ellas las que al parecer del investigador son las que miden más directamente estas actitudes: Simpatía por los inmigrantes y el nivel de acuerdo de restringir el ingreso de extranjeros al país.</p>
+<p>Ahora se cargará los paquetes a utilizar durante todo el análisis y la base de datos con las variables ya operacionalizadas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(dplyr, sjmisc, car, sjlabelled, stargazer, haven, kableExtra, summarytools, ggplot2, GGally, corrplot, texreg, ggpubr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"ipo/input/data-proc/variables_operacionalizadas.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>En la siguiente tabla descriptiva se pueden apreciar las medidas de tendencia central de las variables escogidas para analizar. En cuanto a la variable Edad se puede observar que la edad mínima de los encuestados es de 20, la máxima 85 y el promedio de edad de la muestra es de 51 años. En cuanto a las variables de actitud hacia los inmigrantes la mayoría presenta un valor cercano a 3, este valor en todas las variables representa un valor de indiferencia, es decir que presentan una actitud que no es ni negativa ni de positiva sobre los inmigrantes. A excepción de la variable del nivel de acuerdo con que exista un ingreso igualitario a la salud por parte de nacionales y extranjeros, presenta una media de 3.9 lo que quiere decir que en cuanto a un ingreso igualitario a los servicios de salud del país los chilenos tienen una actitud positiva. Otra variable que presenta una media diferente es la del nivel de acuerdo sobre restringir el ingreso de los inmigrantes al país, también se puede observar un 3.9 de media, lo cual evidencia una actitud muy negativa por parte de la ciudadanía a la inmigración ya que están de acuerdo con esta afirmación. Sin embargo, es necesario mencionar que de todo el grupo de variables esta es la que mayor número de casos perdidos presentaba</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>summarytools<span class="sc">::</span><span class="fu">dfSummary</span>(proc_data, <span class="at">plain.ascii =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>### Data Frame Summary  
+#### proc_data  
+**Dimensions:** 1577 x 9  
+**Duplicates:** 15  
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+No   Variable                           Label                                     Stats / Values             Freqs (% of Valid)   Graph                  Valid      Missing  
+---- ---------------------------------- ----------------------------------------- -------------------------- -------------------- ---------------------- ---------- ---------
+1    Edad\                              Edad                                      Mean (sd) : 50.6 (14.6)\   64 distinct values   \ \ \ \ : \ \ : : .\   1577\      0\       
+     [numeric]                                                                    min &lt; med &lt; max:\                               \ \ \ \ : : : : : .\   (100.0%)   (0.0%)   
+                                                                                  21 &lt; 51 &lt; 85\                                   \ \ : : : : : : :\                         
+                                                                                  IQR (CV) : 23 (0.3)                             : : : : : : : : :\                         
+                                                                                                                                  : : : : : : : : : .                        
+
+2    simpatia_extranjeros\              Nivel de simpatía por inmigrantes         Mean (sd) : 2.9 (1.1)\     1 : 208 (13.2%)\     II \                   1577\      0\       
+     [numeric]                                                                    min &lt; med &lt; max:\          2 : 361 (22.9%)\     IIII \                 (100.0%)   (0.0%)   
+                                                                                  1 &lt; 3 &lt; 5\                 3 : 475 (30.1%)\     IIIIII \                                   
+                                                                                  IQR (CV) : 2 (0.4)         4 : 429 (27.2%)\     IIIII \                                    
+                                                                                                             5 : 104 ( 6.6%)      I                                          
+
+3    ansiedad_interaccion_inmg\         Nivel de ansiedad por interactuar con     Mean (sd) : 3.2 (1)\       1 :  69 ( 4.4%)\     \                      1577\      0\       
+     [numeric]                          inmigrantes                               min &lt; med &lt; max:\          2 : 325 (20.6%)\     IIII \                 (100.0%)   (0.0%)   
+                                                                                  1 &lt; 3 &lt; 5\                 3 : 513 (32.5%)\     IIIIII \                                   
+                                                                                  IQR (CV) : 1 (0.3)         4 : 591 (37.5%)\     IIIIIII \                                  
+                                                                                                             5 :  79 ( 5.0%)      I                                          
+
+4    acuerdo_perdida_de_identidad\      Nivel de acuerdo con que la inmigración   Mean (sd) : 2.9 (1.1)\     1 : 113 ( 7.2%)\     I \                    1577\      0\       
+     [numeric]                          afecta la identidad nacional              min &lt; med &lt; max:\          2 : 626 (39.7%)\     IIIIIII \              (100.0%)   (0.0%)   
+                                                                                  1 &lt; 3 &lt; 5\                 3 : 229 (14.5%)\     II \                                       
+                                                                                  IQR (CV) : 2 (0.4)         4 : 476 (30.2%)\     IIIIII \                                   
+                                                                                                             5 : 133 ( 8.4%)      I                                          
+
+5    acuerdo_aumento_desempleo\         Nivel de acuerdo con que la inmigración   Mean (sd) : 3.2 (1.1)\     1 :  76 ( 4.8%)\     \                      1577\      0\       
+     [numeric]                          genera desempleo                          min &lt; med &lt; max:\          2 : 491 (31.1%)\     IIIIII \               (100.0%)   (0.0%)   
+                                                                                  1 &lt; 4 &lt; 5\                 3 : 176 (11.2%)\     II \                                       
+                                                                                  IQR (CV) : 2 (0.4)         4 : 662 (42.0%)\     IIIIIIII \                                 
+                                                                                                             5 : 172 (10.9%)      II                                         
+
+6    confianza_en_extranjeros\          Nivel de confianza en inmigrantes         Mean (sd) : 2.5 (1)\       1 : 296 (18.8%)\     III \                  1577\      0\       
+     [numeric]                                                                    min &lt; med &lt; max:\          2 : 442 (28.0%)\     IIIII \                (100.0%)   (0.0%)   
+                                                                                  1 &lt; 3 &lt; 5\                 3 : 563 (35.7%)\     IIIIIII \                                  
+                                                                                  IQR (CV) : 1 (0.4)         4 : 247 (15.7%)\     III \                                      
+                                                                                                             5 :  29 ( 1.8%)                                                 
+
+7    fomentar_migracion_calificada\     Nivel de acuerdo con fomentar la          Mean (sd) : 3.3 (1.1)\     1 :  69 ( 4.4%)\     \                      1577\      0\       
+     [numeric]                          inmigración calificada                    min &lt; med &lt; max:\          2 : 372 (23.6%)\     IIII \                 (100.0%)   (0.0%)   
+                                                                                  1 &lt; 4 &lt; 5\                 3 : 288 (18.3%)\     III \                                      
+                                                                                  IQR (CV) : 2 (0.3)         4 : 717 (45.5%)\     IIIIIIIII \                                
+                                                                                                             5 : 131 ( 8.3%)      I                                          
+
+8    acceso_igualitario_salud\          Nivel de acuerdo con que exista un        Mean (sd) : 3.9 (0.8)\     1 :   17 ( 1.1%)\    \                      1577\      0\       
+     [numeric]                          ingreso igualitario a la salud            min &lt; med &lt; max:\          2 :  132 ( 8.4%)\    I \                    (100.0%)   (0.0%)   
+                                                                                  1 &lt; 4 &lt; 5\                 3 :   94 ( 6.0%)\    I \                                        
+                                                                                  IQR (CV) : 0 (0.2)         4 : 1124 (71.3%)\    IIIIIIIIIIIIII \                           
+                                                                                                             5 :  210 (13.3%)     II                                         
+
+9    acuerdo_restriccion_inmigrantes\   Nivel de acuerdo con restringir el        Mean (sd) : 3.9 (1)\       1 :  31 ( 2.0%)\     \                      1577\      0\       
+     [numeric]                          acceso a inmigrantes                      min &lt; med &lt; max:\          2 : 182 (11.5%)\     II \                   (100.0%)   (0.0%)   
+                                                                                  1 &lt; 4 &lt; 5\                 3 : 143 ( 9.1%)\     I \                                        
+                                                                                  IQR (CV) : 1 (0.3)         4 : 817 (51.8%)\     IIIIIIIIII \                               
+                                                                                                             5 : 404 (25.6%)      IIIII                                      
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+<p>siguiendo con el análisis descriptivo a continuación se presentarán dos gráficos univariados de dos variables principales de la investigación.</p>
+<p>En la <a href="#fig-gdp">Figure&nbsp;1</a> se puede observar la variable “Nivel de simpatía por inmigrantes”. En este gráfico se puede apreciar que la barra más alta es la de al medio, es decir la del valor de categoría de respuesta 3 (esta categoría de respuesta es: algo) es decir que los chilenos en su mayoría solo sienten algo de simpatía por los inmigrantes del país. Por último, parece interesante que a pesar de que la siguiente barra más alta sea la de valor 4, se pueden apreciar más observaciones negativas en esta variable (barras del lado izquierdo del gráfico).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> simpatia_extranjeros)) <span class="sc">+</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Nivel de simpatía por inmigrantes"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Simpatia por inmigrantes"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frecuencia"</span>) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-gdp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="trabajo_4_files/figure-html/fig-gdp-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Simpatía por los inmigrantes</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A continuación se presenta la <a href="#fig-gdp2">Figure&nbsp;2</a>, esta corresponde a la variable “Nivel de acuerdo con restringir el ingreso de inmigrantes al país”. En este gráfico, considerando las categorías de respuesta de esta variable (1 Totalmente en desacuerdo a 5 Totalmente de acuerdo) se puede observar que solo dos categorías dominan en frecuencia, estas son la número 4 (De acuerdo). Seguido por la categoría “Totalmente de acuerdo”. En síntesis, con este gráfico se puede apreciar que existe mayor acuerdo (por mucho) a que se restringa el ingreso de inmigrantes al país. Nuevamente se hace necesario mencionar que esta variable es la que más casos perdidos presentaba en todo el grupo seleccionado.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>proc_data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>acuerdo_restriccion_inmigrantes)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Nivel de acuerdo con restringir el ingreso de inmigrantes al país"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Nivel de acuerdo"</span>, <span class="co">#Creo que el título del gráfico es suficientemente claro para dejar esta etiqueta así de simple</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frecuencia"</span>) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-gdp2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="trabajo_4_files/figure-html/fig-gdp2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Nivel de acuerdo con restringir el ingreso de inmigrantes</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="análisis-de-asociación." class="level3">
+<h3 class="anchored" data-anchor-id="análisis-de-asociación.">Análisis de asociación.</h3>
+<p>A continuación, se presentará una tabla de correlación para observar el nivel de asociación que hay entre estas variables, considerando a la edad como la variable independiente y el resto como variables a explicar.</p>
+<p>En la <a href="#fig-gdp3">Figure&nbsp;3</a> se puede observar la correlación que tienen todas las variables entre sí. Como la variable “edad” es nuestra variable independiente la presente interpretación se enfocará en la asociación existente entre esta variable y el resto.</p>
+<p>En general entre la variable Edad y el resto de variables referidas a la actitud de los chilenos con la inmigración se puede observar una asociación pequeña entre estas variables, ya que lo valores del coeficiente de correlación de Pearson va desde -0.2 a 1,7. Existiendo una correlación negativa con las variables: Nivel de simpatía por inmigrantes (-0.2); Nivel de ansiedad por interactuar con inmigrantes (-0.11); Nivel de confianza en inmigrantes (-0,15); Nivel de acuerdo con que exista un ingreso igualitario a la salud (-0.11) a pesar de ser asociaciones pequeñas, dan un buen indicio para la hipótesis propuesta ya que al ser una correlación negativa quiere decir que a medida que aumente la edad los valores en estas variables irían en el sentido contrario, es decir hacia una actitud más negativa de la inmigración. Y una correlación positiva con las variables: Nivel de acuerdo con que la inmigración afecta a la identidad nacional (0.16); Nivel de acuerdo con que la inmigración genera de desempleo (0.16) y Nivel de acuerdo con restringir el acceso a inmigrantes (0.12). Nuevamente, aunque sea una asociación pequeña demuestran que a medida que aumenta la edad estas tres variables que miden actitudes negativa también aumentan. Por último, es importante señalar que todas estas asociaciones presentan un valor p &lt; 0.001, es decir que estos datos se pueden extrapolar a la población con un 99.9% de confianza.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sjPlot<span class="sc">::</span><span class="fu">tab_corr</span>(proc_data, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">triangle =</span> <span class="st">"lower"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-gdp3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+
+<table style="border-collapse:collapse; border:none;">
+<tbody><tr>
+<th style="font-style:italic; font-weight:normal; border-top:double black; border-bottom:1px solid black; padding:0.2cm;">
+&nbsp;
+</th>
+<th style="font-style:italic; font-weight:normal; border-top:double black; border-bottom:1px solid black; padding:0.2cm;">
+Edad
+</th>
+<th style="font-style:italic; font-weight:normal; border-top:double black; border-bottom:1px solid black; padding:0.2cm;">
+Nivel de simpatía por inmigrantes
+</th>
+<th style="font-style:italic; font-weight:normal; border-top:double black; border-bottom:1px solid black; padding:0.2cm;">
+Nivel de ansiedad por interactuar con<br>inmigrantes
+</th>
+<th style="font-style:italic; font-weight:normal; border-top:double black; border-bottom:1px solid black; padding:0.2cm;">
+Nivel de acuerdo con que la inmigración<br>afecta la identidad nacional
+</th>
+<th style="font-style:italic; font-weight:normal; border-top:double black; border-bottom:1px solid black; padding:0.2cm;">
+Nivel de acuerdo con que la inmigración<br>genera desempleo
+</th>
+<th style="font-style:italic; font-weight:normal; border-top:double black; border-bottom:1px solid black; padding:0.2cm;">
+Nivel de confianza en inmigrantes
+</th>
+<th style="font-style:italic; font-weight:normal; border-top:double black; border-bottom:1px solid black; padding:0.2cm;">
+Nivel de acuerdo con fomentar la<br>inmigración calificada
+</th>
+<th style="font-style:italic; font-weight:normal; border-top:double black; border-bottom:1px solid black; padding:0.2cm;">
+Nivel de acuerdo con que exista un<br>ingreso igualitario a la salud
+</th>
+<th style="font-style:italic; font-weight:normal; border-top:double black; border-bottom:1px solid black; padding:0.2cm;">
+Nivel de acuerdo con restringir el<br>acceso a inmigrantes
+</th>
+</tr>
+<tr>
+<td style="font-style:italic;">
+Edad
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td style="font-style:italic;">
+Nivel de simpatía por inmigrantes
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.204<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td style="font-style:italic;">
+Nivel de ansiedad por interactuar con<br>inmigrantes
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.112<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.428<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td style="font-style:italic;">
+Nivel de acuerdo con que la inmigración<br>afecta la identidad nacional
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.165<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.360<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.290<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td style="font-style:italic;">
+Nivel de acuerdo con que la inmigración<br>genera desempleo
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.169<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.355<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.298<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.595<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td style="font-style:italic;">
+Nivel de confianza en inmigrantes
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.156<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.592<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.478<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.380<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.370<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td style="font-style:italic;">
+Nivel de acuerdo con fomentar la<br>inmigración calificada
+</td>
+<td style="padding:0.2cm; text-align:center; color:#999999;">
+-0.018<span style="vertical-align:super;font-size:0.8em;"></span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.154<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.136<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center; color:#999999;">
+-0.028<span style="vertical-align:super;font-size:0.8em;"></span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.071<span style="vertical-align:super;font-size:0.8em;">**</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.182<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td style="font-style:italic;">
+Nivel de acuerdo con que exista un<br>ingreso igualitario a la salud
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.110<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.309<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.223<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.236<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.239<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.306<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.201<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td style="font-style:italic;">
+Nivel de acuerdo con restringir el<br>acceso a inmigrantes
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.124<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.272<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.156<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.324<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+0.372<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.246<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center; color:#999999;">
+0.008<span style="vertical-align:super;font-size:0.8em;"></span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+-0.191<span style="vertical-align:super;font-size:0.8em;">***</span>
+</td>
+<td style="padding:0.2cm; text-align:center;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="10" style="border-bottom:double black; border-top:1px solid black; font-style:italic; font-size:0.9em; text-align:right;">
+Computed correlation used pearson-method with listwise-deletion.
+</td>
+</tr>
+
+</tbody></table>
+<figcaption class="figure-caption">Figure&nbsp;3: Matriz de correlación</figcaption>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="regresión-lineal-simple." class="level2">
+<h2 class="anchored" data-anchor-id="regresión-lineal-simple.">Regresión lineal simple.</h2>
+<p>Para finalizar se realizará un análisis de regresión simple entre la variable edad y tres variables de actitud hacia los inmigrantes (dos de las con mayor asociación (“Nivel de simpatía con inmigrantes” y “Nivel de acuerdo con que la inmigración genera desempleo” y la última por su relevancia en cuanto a lo directa que es para medir la actitud de los chilenos hacia la inmigración (“Nivel de acuerdo con restringir el ingreso de inmigrantes al país”).</p>
+<p>En cuanto al modelo 1 (simpatía con extranjeros)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>reg2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(simpatia_extranjeros <span class="sc">~</span> Edad, <span class="at">data =</span> proc_data)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>reg3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(acuerdo_restriccion_inmigrantes <span class="sc">~</span> Edad, <span class="at">data =</span> proc_data)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>reg4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(acuerdo_aumento_desempleo <span class="sc">~</span> Edad, <span class="at">data =</span> proc_data)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(reg2, <span class="at">type =</span> <span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+===============================================
+                        Dependent variable:    
+                    ---------------------------
+                       simpatia_extranjeros    
+-----------------------------------------------
+Edad                         -0.016***         
+                              (0.002)          
+                                               
+Constant                     3.713***          
+                              (0.101)          
+                                               
+-----------------------------------------------
+Observations                   1,577           
+R2                             0.042           
+Adjusted R2                    0.041           
+Residual Std. Error      1.110 (df = 1575)     
+F Statistic          68.505*** (df = 1; 1575)  
+===============================================
+Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(reg3, <span class="at">type =</span> <span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+===================================================
+                          Dependent variable:      
+                    -------------------------------
+                    acuerdo_restriccion_inmigrantes
+---------------------------------------------------
+Edad                           0.008***            
+                                (0.002)            
+                                                   
+Constant                       3.454***            
+                                (0.089)            
+                                                   
+---------------------------------------------------
+Observations                     1,577             
+R2                               0.015             
+Adjusted R2                      0.015             
+Residual Std. Error        0.978 (df = 1575)       
+F Statistic            24.432*** (df = 1; 1575)    
+===================================================
+Note:                   *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(reg4, <span class="at">type =</span> <span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+===============================================
+                        Dependent variable:    
+                    ---------------------------
+                     acuerdo_aumento_desempleo 
+-----------------------------------------------
+Edad                         0.013***          
+                              (0.002)          
+                                               
+Constant                     2.560***          
+                              (0.102)          
+                                               
+-----------------------------------------------
+Observations                   1,577           
+R2                             0.029           
+Adjusted R2                    0.028           
+Residual Std. Error      1.128 (df = 1575)     
+F Statistic          46.389*** (df = 1; 1575)  
+===============================================
+Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ggeffects<span class="sc">::</span><span class="fu">ggpredict</span>(reg2, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"Edad"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>predicted)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">color=</span><span class="st">"grey"</span>, <span class="at">fill=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> conf.low, <span class="at">ymax =</span> conf.high), <span class="at">width=</span>.<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Simpatía por inmigrantes según edad"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">""</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Muy Poco/Nada"</span>, <span class="st">"Poco"</span>, <span class="st">"Algo"</span>, <span class="st">"Bastante"</span>, <span class="st">"Mucho"</span>)) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">16</span>), </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">16</span>, <span class="at">by =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-gdp5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="trabajo_4_files/figure-html/fig-gdp5-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Gráfico de valores predichos de simpatía por los inmigrantes</figcaption>
+</figure>
+</div>
+</div>
+</div>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-escueladegobierno2019" class="csl-entry" role="listitem">
+Escuela de Gobierno. 2019. <span>“Méndez Entregó Indicadores Que Muestran a Chile Como Un País Con Percepción Negativa Frente a La Migración.”</span> <a href="https://gobierno.uc.cl/noticias/mendez-entrego-indicadores-que-muestran-a-chile-como-un-pais-con-percepcion-negativa-frente-a-la-migracion/">https://gobierno.uc.cl/noticias/mendez-entrego-indicadores-que-muestran-a-chile-como-un-pais-con-percepcion-negativa-frente-a-la-migracion/</a>.
+</div>
+<div id="ref-fundaciónsuperacióndelapobreza2019" class="csl-entry" role="listitem">
+Fundación Superación de la Pobreza. 2019. <span>“Los Chilenos Son Los Más Duros de América En Su Percepción Sobre Los Migrantes.”</span> <a href="https://www.superacionpobreza.cl/los-chilenos-son-los-mas-duros-de-america-en-su-percepcion-sobre-los-migrantes/">https://www.superacionpobreza.cl/los-chilenos-son-los-mas-duros-de-america-en-su-percepcion-sobre-los-migrantes/</a>.
+</div>
+<div id="ref-ine2022" class="csl-entry" role="listitem">
+INE. 2022. <span>“Estimación de Personas Extranjeras: Residentes Habituales En Chile Al 31 de Diciembre de 2022.”</span> December. <a href="https://serviciomigraciones.cl/estudios-migratorios/estimaciones-de-extranjeros/">https://serviciomigraciones.cl/estudios-migratorios/estimaciones-de-extranjeros/</a>.
+</div>
+<div id="ref-tejeda2017" class="csl-entry" role="listitem">
+Tejeda. 2017. <span>“Inmigración y Reactividad de La Sociedad Receptora. Una Descripción Cuantitativa de La Xenofobia y El Racismo En La Región Biobío y Metropolitana.”</span>
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

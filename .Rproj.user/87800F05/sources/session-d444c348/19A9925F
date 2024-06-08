@@ -1,0 +1,32 @@
+{
+    "id": "19A9925F",
+    "path": "~/GitHub/trabajo-4/trabajo_4.qmd",
+    "project_path": "trabajo_4.qmd",
+    "type": "quarto_markdown",
+    "hash": "3909152485",
+    "contents": "",
+    "dirty": false,
+    "created": 1717812343287.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "100,0",
+        "scrollLine": "0",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "9701:5210.39990234375"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1717818872,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1717818872585,
+    "read_only": false,
+    "read_only_alternatives": []
+}

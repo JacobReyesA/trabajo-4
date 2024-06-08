@@ -1,0 +1,267 @@
+{
+    "sources": [
+        {
+            "author": [
+                {
+                    "literal": "Escuela de Gobierno"
+                }
+            ],
+            "id": "escueladegobiernoMendezEntregoIndicadores2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "https://gobierno.uc.cl/noticias/mendez-entrego-indicadores-que-muestran-a-chile-como-un-pais-con-percepcion-negativa-frente-a-la-migracion/",
+            "title": "Méndez entregó indicadores que muestran a Chile como un país con percepción negativa frente a la migración",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "literal": "Fundación Superación de la Pobreza"
+                }
+            ],
+            "id": "fundacionsuperaciondelapobrezaChilenosSonMas2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "title": "Los chilenos son los más duros de América en su percepción sobre los migrantes.",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Gálvez",
+                    "given": "Diego"
+                },
+                {
+                    "family": "Durán",
+                    "given": "Patricio"
+                },
+                {
+                    "family": "Lawrence",
+                    "given": "Tomás"
+                },
+                {
+                    "family": "Rojas",
+                    "given": "Nicolás"
+                }
+            ],
+            "id": "galvezBAROMETROPERCEPCIONMIGRACION2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "title": "BARÓMETRO DE PERCEPCIÓN DE LA MIGRACIÓN 2018-2020: ACTIVIDAD EN REDES SOCIALES Y SU CONTEXTO",
+            "title-short": "BARÓMETRO DE PERCEPCIÓN DE LA MIGRACIÓN 2018-2020",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "INE"
+                }
+            ],
+            "id": "ineEstimacionPersonasExtranjeras2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        12
+                    ]
+                ]
+            },
+            "title": "Estimación de personas extranjeras: Residentes habituales en Chile al 31 de diciembre de 2022.",
+            "title-short": "Estimación de personas extranjeras",
+            "type": ""
+        },
+        {
+            "DOI": "10.14422/mig.i37.y2015.003",
+            "ISSN": "2341-0833, 1138-5774",
+            "abstract": "Cuando una sociedad inmigratoria experimenta graves problemas económicos, actitudes hostiles hacia la poblacióninmigrada suelen incrementarse: en este sentido apuntan teorías ampliamente reconocidas, así como una nutrida evidencia empírica.No obstante, pese a reunir las aludidas condiciones, el caso español desmiente estas previsiones: durante los primeros seis años de la crisis económica iniciada en 2008, la preocupación por el tema inmigratorio y la animosidad hacia las personas inmigradas han disminuido. En qué radica esta excepcionalidad española? Este artículo retrata la situación de partida y la evolución de las actitudes desde 2008, identifica varias hipótesis explicativas, y señala sus implicaciones para las políticas públicas.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2024,
+                        4,
+                        12
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Rinken",
+                    "given": "Sebastian"
+                }
+            ],
+            "container-title": "Migraciones. Publicación del Instituto Universitario de Estudios sobre Migraciones",
+            "id": "rinkenActitudesHaciaInmigracion1970",
+            "issue": "37",
+            "issued": {
+                "date-parts": [
+                    [
+                        1970,
+                        1
+                    ]
+                ]
+            },
+            "page": "53-74",
+            "title": "Actitudes hacia la inmigración y los inmigrantes: En qué es España excepcional?",
+            "title-short": "Actitudes hacia la inmigración y los inmigrantes",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rizik",
+                    "given": "Jorge"
+                }
+            ],
+            "id": "rizikMigracionMediosComunicacion2019a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "299-213",
+            "title": "La migración en los medios de comunicación",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.30827/Digibug.6843",
+            "ISSN": "0214-7564",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2024,
+                        3,
+                        26
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Rubio",
+                    "given": "José María"
+                }
+            ],
+            "container-title": "Gazeta de Antropología",
+            "id": "rubioOpinionPublicaMedios2009",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009,
+                        2
+                    ]
+                ]
+            },
+            "title": "Opinión pública y medios de comunicación. Teoría de la ’agenda setting’",
+            "type": "article-journal"
+        },
+        {
+            "ISSN": "0718-0497",
+            "author": [
+                {
+                    "family": "Tejeda"
+                }
+            ],
+            "id": "tejedaInmigracionReactividadSociedad2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "title": "Inmigración y reactividad de la sociedad receptora. Una descripción cuantitativa de la xenofobia y el racismo en la Región Biobío y Metropolitana.",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://serviciomigraciones.cl/estudios-migratorios/estimaciones-de-extranjeros/",
+            "author": [
+                {
+                    "family": "INE"
+                }
+            ],
+            "id": "ine2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        12,
+                        23
+                    ]
+                ]
+            },
+            "title": "Estimación de personas extranjeras: Residentes habituales en chile al 31 de diciembre de 2022.",
+            "title-short": "Estimación de personas extranjeras",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://www.superacionpobreza.cl/los-chilenos-son-los-mas-duros-de-america-en-su-percepcion-sobre-los-migrantes/",
+            "author": [
+                {
+                    "family": "Fundación Superación de la Pobreza"
+                }
+            ],
+            "id": "fundaciónsuperacióndelapobreza2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "title": "Los chilenos son los más duros de américa en su percepción sobre los migrantes.",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://gobierno.uc.cl/noticias/mendez-entrego-indicadores-que-muestran-a-chile-como-un-pais-con-percepcion-negativa-frente-a-la-migracion/",
+            "author": [
+                {
+                    "family": "Escuela de Gobierno"
+                }
+            ],
+            "id": "escueladegobierno2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "title": "Méndez entregó indicadores que muestran a chile como un país con percepción negativa frente a la migración",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Tejeda"
+                }
+            ],
+            "id": "tejeda2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "title": "Inmigración y reactividad de la sociedad receptora. Una descripción cuantitativa de la xenofobia y el racismo en la región biobío y metropolitana.",
+            "type": "article-journal"
+        }
+    ],
+    "project_biblios": []
+}

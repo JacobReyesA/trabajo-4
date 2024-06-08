@@ -1,0 +1,114 @@
+---
+title: "Cómo afecta la edad en la percepción de la inmigración en Chile el año 2021"
+format: html
+editor: visual
+bibliography: percepcion-de-inmigracion.bib
+link-citations: TRUE
+---
+
+*Por: Jacob Reyes A.*
+
+## Introducción
+
+En Chile el fenómeno de inmigración no es algo nuevo, ocurre desde hace más de un siglo, sin embargo nunca con un flujo tan intenso como el de los últimos años. Las estadísticas del Instituto Nacional de Estadísticas (INE) en conjunto con el Servicio Nacional de Migraciones (SERMIG) estimaron que para el año 2022 había un total de 1,625,074 personas extranjeras residiendo en Chile [@ine2022]. Según estas estadísticas migratorias los colectivos principales de la población extranjera son de Venezuela (32.8%), Perú (15.4%) y Colombia (11.7%) seguidos por Haití (11.4%), Bolivia (9.1%) y Argentina (4.9%).
+
+El 2019 la Alianza Comunicación y Pobreza realizó el seminario Migración y Opinión Pública. En él el académico Roberto Méndez presentó datos relacionados a la opinión pública sobre la migración los cuales demuestran que Chile es el país con la percepción más severa sobre los migrantes, en síntesis los chilenos consideran esta ola de inmigración como una amenaza a la identidad nacional, al empleo, seguridad y al acceso de los servicios entregados por el Estado [ver @fundaciónsuperacióndelapobreza2019; también @escueladegobierno2019]
+
+Según un estudio del año 2017 acerca de la xenofobia realizado en las regiones del Biobío y Metropolitana, existe evidencia de que a mayor edad mayor será la percepción negativa que se tenga sobre los inmigrante lo que resulta en actitudes xenofóbicas por parte de los nacionales hacia los colectivos extranjeros que viven en el país [@tejeda2017]. En base a estos hallazgos se pretende en el presente estudio analizar la asociación entre variables similares a las del estudio de Tejeda para ver como se comportan en el año 2022.
+
+Considerando lo anteriormente expuesto es que en esta breve investigación se busca dilucidar como la percepción de los chilenos sobre la inmigración varía según la edad de los ciudadanos, con la hipótesis: **A mayor edad, la percepción negativa de los chilenos sobre los inmigrantes aumenta.** Para llevar a cabo este estudio se consultarán los datos de El Estudio Longitudinal Social de Chile (ELSOC) aplicado en el 2021.
+
+## Análisis descriptivo
+
+A continuación se presentará un breve análisis descriptivo. Cómo ya fue mencionado en la introducción los datos utilizados fueron los generados por la encuesta ELSOC el año 2022 en Chile. Se escogieron nueve variables para llevar a cabo el análisis: Edad y diferentes variables que miden las actitudes que tienen los chilenos sobre la inmigración, destacando entre ellas las que al parecer del investigador son las que miden más directamente estas actitudes: Simpatía por los inmigrantes y el nivel de acuerdo de restringir el ingreso de extranjeros al país.
+
+Ahora se cargará los paquetes a utilizar durante todo el análisis y la base de datos con las variables ya operacionalizadas.
+
+```{r}
+pacman::p_load(dplyr, sjmisc, car, sjlabelled, stargazer, haven, kableExtra, summarytools, ggplot2, GGally, corrplot, texreg, ggpubr)
+load("ipo/input/data-proc/variables_operacionalizadas.RData")
+
+```
+
+En la siguiente tabla descriptiva se pueden apreciar las medidas de tendencia central de las variables escogidas para analizar. En cuanto a la variable Edad se puede observar que la edad mínima de los encuestados es de 20, la máxima 85 y el promedio de edad de la muestra es de 51 años. En cuanto a las variables de actitud hacia los inmigrantes la mayoría presenta un valor cercano a 3, este valor en todas las variables representa un valor de indiferencia, es decir que presentan una actitud que no es ni negativa ni de positiva sobre los inmigrantes. A excepción de la variable del nivel de acuerdo con que exista un ingreso igualitario a la salud por parte de nacionales y extranjeros, presenta una media de 3.9 lo que quiere decir que en cuanto a un ingreso igualitario a los servicios de salud del país los chilenos tienen una actitud positiva. Otra variable que presenta una media diferente es la del nivel de acuerdo sobre restringir el ingreso de los inmigrantes al país, también se puede observar un 3.9 de media, lo cual evidencia una actitud muy negativa por parte de la ciudadanía a la inmigración ya que están de acuerdo con esta afirmación. Sin embargo, es necesario mencionar que de todo el grupo de variables esta es la que mayor número de casos perdidos presentaba
+
+```{r}
+summarytools::dfSummary(proc_data, plain.ascii = FALSE)
+
+```
+
+siguiendo con el análisis descriptivo a continuación se presentarán dos gráficos univariados de dos variables principales de la investigación.
+
+En la @fig-gdp se puede observar la variable "Nivel de simpatía por inmigrantes". En este gráfico se puede apreciar que la barra más alta es la de al medio, es decir la del valor de categoría de respuesta 3 (esta categoría de respuesta es: algo) es decir que los chilenos en su mayoría solo sienten algo de simpatía por los inmigrantes del país. Por último, parece interesante que a pesar de que la siguiente barra más alta sea la de valor 4, se pueden apreciar más observaciones negativas en esta variable (barras del lado izquierdo del gráfico).
+
+```{r}
+#| label: fig-gdp
+#| fig-cap: "Simpatía por los inmigrantes"
+proc_data %>% ggplot(aes(x = simpatia_extranjeros)) + 
+  geom_bar(fill = "red")+
+  labs(title = "Nivel de simpatía por inmigrantes",
+       x = "Simpatia por inmigrantes",
+       y = "Frecuencia") +
+  theme_bw()
+```
+
+A continuación se presenta la @fig-gdp2, esta corresponde a la variable "Nivel de acuerdo con restringir el ingreso de inmigrantes al país". En este gráfico, considerando las categorías de respuesta de esta variable (1 Totalmente en desacuerdo a 5 Totalmente de acuerdo) se puede observar que solo dos categorías dominan en frecuencia, estas son la número 4 (De acuerdo). Seguido por la categoría "Totalmente de acuerdo". En síntesis, con este gráfico se puede apreciar que existe mayor acuerdo (por mucho) a que se restringa el ingreso de inmigrantes al país. Nuevamente se hace necesario mencionar que esta variable es la que más casos perdidos presentaba en todo el grupo seleccionado.
+
+```{r}
+#| label: fig-gdp2
+#| fig-cap: "Nivel de acuerdo con restringir el ingreso de inmigrantes"
+proc_data %>% ggplot(aes(x=acuerdo_restriccion_inmigrantes)) +
+  geom_bar(fill = "red") +
+  labs(title = "Nivel de acuerdo con restringir el ingreso de inmigrantes al país",
+       x = "Nivel de acuerdo", #Creo que el título del gráfico es suficientemente claro para dejar esta etiqueta así de simple
+       y = "Frecuencia") +
+  theme_bw()
+```
+
+### Análisis de asociación.
+
+A continuación, se presentará una tabla de correlación para observar el nivel de asociación que hay entre estas variables, considerando a la edad como la variable independiente y el resto como variables a explicar.
+
+En la @fig-gdp3 se puede observar la correlación que tienen todas las variables entre sí. Como la variable "edad" es nuestra variable independiente la presente interpretación se enfocará en la asociación existente entre esta variable y el resto.
+
+En general entre la variable Edad y el resto de variables referidas a la actitud de los chilenos con la inmigración se puede observar una asociación pequeña entre estas variables, ya que lo valores del coeficiente de correlación de Pearson va desde -0.2 a 1,7. Existiendo una correlación negativa con las variables: Nivel de simpatía por inmigrantes (-0.2); Nivel de ansiedad por interactuar con inmigrantes (-0.11); Nivel de confianza en inmigrantes (-0,15); Nivel de acuerdo con que exista un ingreso igualitario a la salud (-0.11) a pesar de ser asociaciones pequeñas, dan un buen indicio para la hipótesis propuesta ya que al ser una correlación negativa quiere decir que a medida que aumente la edad los valores en estas variables irían en el sentido contrario, es decir hacia una actitud más negativa de la inmigración. Y una correlación positiva con las variables: Nivel de acuerdo con que la inmigración afecta a la identidad nacional (0.16); Nivel de acuerdo con que la inmigración genera de desempleo (0.16) y Nivel de acuerdo con restringir el acceso a inmigrantes (0.12). Nuevamente, aunque sea una asociación pequeña demuestran que a medida que aumenta la edad estas tres variables que miden actitudes negativa también aumentan. Por último, es importante señalar que todas estas asociaciones presentan un valor p \< 0.001, es decir que estos datos se pueden extrapolar a la población con un 99.9% de confianza.
+
+```{r}
+#| label: fig-gdp3
+#| fig-cap: "Matriz de correlación"
+sjPlot::tab_corr(proc_data, 
+                 triangle = "lower")
+```
+
+## Regresión lineal simple.
+
+Para finalizar se realizará un análisis de regresión simple entre la variable edad y tres variables de actitud hacia los inmigrantes (dos de las con mayor asociación ("Nivel de simpatía con inmigrantes" y "Nivel de acuerdo con que la inmigración genera desempleo" y la última por su relevancia en cuanto a lo directa que es para medir la actitud de los chilenos hacia la inmigración ("Nivel de acuerdo con restringir el ingreso de inmigrantes al país").
+
+En cuanto al modelo 1 (simpatía con extranjeros)
+
+```{r}
+#| label: fig-gdp4
+#| fig-cap: "Modelos de regresión lineal"
+reg2 <- lm(simpatia_extranjeros ~ Edad, data = proc_data)
+reg3 <- lm(acuerdo_restriccion_inmigrantes ~ Edad, data = proc_data)
+reg4 <- lm(acuerdo_aumento_desempleo ~ Edad, data = proc_data)
+
+stargazer(reg2, type = "text")
+stargazer(reg3, type = "text")
+stargazer(reg4, type = "text")
+```
+
+```{r}
+#| label: fig-gdp5
+#| fig-cap: "Gráfico de valores predichos de simpatía por los inmigrantes"
+ggeffects::ggpredict(reg2, terms = c("Edad")) %>%
+  ggplot(aes(x=x, y=predicted)) +
+  geom_bar(stat="identity", color="grey", fill="red")+
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width=.1) +
+  labs(title="Simpatía por inmigrantes según edad", x = "", y = "") +
+  theme_bw() +
+  scale_x_discrete(name = "",
+                   labels = c("Muy Poco/Nada", "Poco", "Algo", "Bastante", "Mucho")) +
+  scale_y_continuous(limits = c(0,16), 
+                     breaks = seq(0,16, by = 1))
+```

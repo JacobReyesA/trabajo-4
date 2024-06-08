@@ -47,7 +47,7 @@ proc_data$confianza_en_extranjeros <- set_label(x = proc_data$confianza_en_extra
 proc_data$fomentar_migracion_calificada <- set_label(x = proc_data$fomentar_migracion_calificada, label = "Nivel de acuerdo con fomentar la inmigración calificada")
 proc_data$acceso_igualitario_salud <- set_label(x = proc_data$acceso_igualitario_salud, label = "Nivel de acuerdo con que exista un ingreso igualitario a la salud")
 proc_data$acuerdo_restriccion_inmigrantes <- set_label(x = proc_data$acuerdo_restriccion_inmigrantes, label = "Nivel de acuerdo con restringir el acceso a inmigrantes")
-get_label(proc_data_original)
+get_label(proc_data)
 
 #Guardando la base de datos con las variables procesadas. 
 save(proc_data, file="ipo/input/data-proc/variables_operacionalizadas.RData")
@@ -69,13 +69,13 @@ dim(proc_data)
 sum(is.na(proc_data))
 proc_data <-na.omit(proc_data) #Se eliminan los casos perdidos, los cuales eran 1376.
 ####Gráficos univariados.
-graph1 <- proc_data_original %>% ggplot(aes(x = simpatia_extranjeros)) + 
+graph1 <- proc_data %>% ggplot(aes(x = simpatia_extranjeros)) + 
   geom_bar(fill = "red")+
   labs(title = "Nivel de simpatía por inmigrantes",
        x = "Simpatia por inmigrantes",
        y = "Frecuencia") +
   theme_bw()
-graph2 <- proc_data_original %>% ggplot(aes(x=acuerdo_restriccion_inmigrantes)) +
+graph2 <- proc_data %>% ggplot(aes(x=acuerdo_restriccion_inmigrantes)) +
   geom_bar(fill = "red") +
   labs(title = "Nivel de acuerdo con restringir el ingreso de inmigrantes al país",
        x = "Nivel de acuerdo", #Creo que el título del gráfico es suficientemente claro para dejar esta etiqueta así de simple
@@ -83,10 +83,10 @@ graph2 <- proc_data_original %>% ggplot(aes(x=acuerdo_restriccion_inmigrantes)) 
   theme_bw()
 graph2
 #Correlación de las variables.
-colSums(is.na(proc_data_original))
-sjPlot::tab_corr(proc_data_original, 
+colSums(is.na(proc_data))
+sjPlot::tab_corr(proc_data, 
                  triangle = "lower")
-sjPlot::tab_corr(proc_data_original, 
+sjPlot::tab_corr(proc_data, 
                  na.deletion = "pairwise", # espeficicamos tratamiento NA
                  triangle = "lower")
 
@@ -118,4 +118,12 @@ ggeffects::ggpredict(reg2, terms = c("Edad")) %>%
                    labels = c("Muy Poco/Nada", "Poco", "Algo", "Bastante", "Mucho")) +
   scale_y_continuous(limits = c(0,16), 
                      breaks = seq(0,16, by = 1))
-frq(proc_data_original$simpatia_extranjeros)
+frq(proc_data_original$ansiedad_interaccion_inmg)
+frq(proc_data$simpatia_extranjeros)
+frq(proc_data_original$acuerdo_restriccion_inmigrantes)
+proc_data %>% ggplot(aes(x = simpatia_extranjeros)) + 
+  geom_bar(fill = "red")+
+  labs(title = "Nivel de simpatía por inmigrantes",
+       x = "Simpatia por inmigrantes",
+       y = "Frecuencia") +
+  theme_bw()
