@@ -84,7 +84,11 @@ sjPlot::tab_corr(proc_data,
 
 Para finalizar se realizará un análisis de regresión simple entre la variable edad y tres variables de actitud hacia los inmigrantes (dos de las con mayor asociación ("Nivel de simpatía con inmigrantes" y "Nivel de acuerdo con que la inmigración genera desempleo" y la última por su relevancia en cuanto a lo directa que es para medir la actitud de los chilenos hacia la inmigración ("Nivel de acuerdo con restringir el ingreso de inmigrantes al país").
 
-En cuanto al modelo 1 (simpatía con extranjeros)
+En cuanto al modelo 1 (simpatía con extranjeros) se incluyó la edad como predictor. POdemos ver un coeficiente de regresión de -0.016, esto indica que al aumentar la edad la simpatía por los inmigrantes disminuirá en 0.01 puntos. Este efecto se puede extrapolar a la sociedad co un 99.9% de confianza. El intercepto es de 3.7 esto indica que una persona con la edad mínima (20) presentaría un nivel de simpatía de 3.7 con los inmigrantes. Por último, este modelo solo logra explicar un 4% de la varianza de la variable dependiente (R2=0.04)
+
+En cuanto al modelo 2 (Nivel de acuerdo con restricción de ingreso de inmigrantes) se puede observar un coeficiente de regresión muy bajo de 0.008, lo que quiere decir que el nivel de acuerdo a medida que aumente la edad aumentará solo en un 0.008. Presenta una constante de 3.5 lo que indica que una persona de 20 años presentaría un nivel de acuerdo de 3.5 en restringir el acceso a los inmigrantes. Este bajÍsimo efecto se puede extrapolar a la población con un 99.9% de confianza y el modelo 2 solo explica un 1.5% la varianza de la variable dependiente (R2=0.015).
+
+Por último, en el modelo 3 (Nivel de acuerdo con que la inmigración aumenta el desempleo) se puede observar que la edad tiene un coeficiente de regresión de 0.013, esto quiere decir que a medida que aumenta la edad, el nivel de acuerdo aumentará solo 0.0013 unidades. Este efecto al igual que los anteriores también se puede extrapolar a la población con un 99.9% de confianza. También se puede observar que existe una constante de 2.5 esto quiere decir que una persona con el mínimo edad de la muestra (20) podría presentar un nivel de acuerdo de un 2.5. Por último, este modelo solo puede explicar un 2.9% de la varianza de esta variable dependiente (R2=0.029).
 
 ```{r}
 #| label: fig-gdp4
@@ -112,3 +116,5 @@ ggeffects::ggpredict(reg2, terms = c("Edad")) %>%
   scale_y_continuous(limits = c(0,16), 
                      breaks = seq(0,16, by = 1))
 ```
+
+Considerando los resultados anteriormente expuestos, al ser tan bajos creo que se debe rechazar la hipótesis propuesta, ya que si bien existe una asociación esta es demasiado leve, y con los resultados de los modelos de regresión se pudo observar también que la edad afecta muy poco a las variables de actitud sobre los inmigrantes.
