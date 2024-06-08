@@ -92,3 +92,30 @@ sjPlot::tab_corr(proc_data_original,
 
 #Regresion lineal
 pacman::p_load(texreg, ggpubr)
+reg2 <- lm(simpatia_extranjeros ~ Edad, data = proc_data_original)
+reg3 <- lm(acuerdo_restriccion_inmigrantes ~ Edad, data = proc_data_original)
+reg4 <- lm(acuerdo_aumento_desempleo ~ Edad, data = proc_data_original)
+
+knitreg(list(reg2, reg3, reg4),
+        custom.model.names = c("Modelo 1",
+                               "Modelo 2",
+                               "Modelo 3"),
+        custom.note = "*** p < 0.001; ** p < 0.01; * p < 0.05",
+        caption = "Actitudes hacia los inmigrantes",
+        caption.above = TRUE)
+stargazer(reg2, type = "text")
+stargazer(reg3, type = "text")
+stargazer(reg4, type = "text")
+#Gráfico de valores predichos
+pacman::p_load(fastdummies, ggeffects)
+ggeffects::ggpredict(reg2, terms = c("Edad")) %>%
+  ggplot(aes(x=x, y=predicted)) +
+  geom_bar(stat="identity", color="grey", fill="red")+
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width=.1) +
+  labs(title="Simpatía por inmigrantes según edad", x = "", y = "") +
+  theme_bw() +
+  scale_x_discrete(name = "",
+                   labels = c("Muy Poco/Nada", "Poco", "Algo", "Bastante", "Mucho")) +
+  scale_y_continuous(limits = c(0,16), 
+                     breaks = seq(0,16, by = 1))
+frq(proc_data_original$simpatia_extranjeros)
