@@ -39,7 +39,9 @@ Esta breve investigación consistió en estudiar cómo la edad de los chilenos a
 
 En el siguiente gráfico se puede observar un nivel de simpatía bastante variado, ignorando la categoría de respuesta "neutra" se observa que una leve mayoría tiene "Bastante" simpatía por los inmigrantes en comparación a quienes sienten poca simpatía por ellos.
 
-![](ipo/output/graph1.png) \## Gráfico II
+![](ipo/output/graph1.png) 
+
+## Gráfico II
 
 Se puede apreciar que la gran mayoría de chilenos está de acuerdo con las restricción de ingreso de migrantes al país.
 
