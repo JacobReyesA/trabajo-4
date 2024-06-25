@@ -1,12 +1,78 @@
 ---
-title: "Percepción de la inmigración en Chile"
+title: "Percepción de la inmigración en Chile: ¿La edad afecta la percepción sobre la inmigración?"
 author: "Jacob Reyes A."
 format: revealjs
 editor: visual
 ---
 
 # Introducción
+
 Esta breve investigación consistió en estudiar cómo la edad de los chilenos afecta la percepción que éstos tienen sobre la inmigración, bajo la hipótesis: **A mayor edad, la percepción negativa sobre la inmigración aumenta.** Para llevar a cabo este estudio se utilizaron los datos de El Estudio Longitudinal Social de Chile (ELSOC) aplicado en el 2021.
 
 # Descriptivos
 
+## Variables escogidas (parte 1):
+
+-   Edad
+
+-   Simpatía por los inmigrantes
+
+-   Ansiedad por la interacción con los inmigrantes.
+
+-   Nivel de acuerdo con que Chile pierde su identidad con la llegada de inmigrantes.
+
+-   Nivel de acuerdo con que se necesitan restricciones para el ingreso de inmigrantes al país.
+
+## Variables escogidas (parte 2)
+
+-   Nivel de acuerdo con que la llegada de inmigrantes aumenta el desempleo.
+
+-   Grado de confianza en inmigrantes.
+
+-   Nivel de acuerdo con fomentar la migración de inmigrantes calificados.
+
+-   Nivel de acuerdo con que los inmigrantes tengo un acceso a la salud igualitario que los chilenos.
+
+# Visualización de datos.
+
+## Gráfico I
+
+En el siguiente gráfico se puede observar un nivel de simpatía bastante variado, ignorando la categoría de respuesta "neutra" se observa que una leve mayoría tiene "Bastante" simpatía por los inmigrantes en comparación a quienes sienten poca simpatía por ellos.
+
+![](ipo/output/graph1.png) \## Gráfico II
+
+Se puede apreciar que la gran mayoría de chilenos está de acuerdo con las restricción de ingreso de migrantes al país.
+
+![](ipo/output/graph2.png)
+
+# Asociación
+
+La correlación entre la variable "Edad" con el resto de variables es bastante baja, los coeficientes de correlación de Pearson varían entre 0.1 y 0.2. De todas formas es necesario mencionar que todas presentan un
+
+## Regresión lineal simple
+
+Edad y Simpatía por inmigrantes
+
+![](ipo/output/regresion1.png)
+
+## Edad y nivel de acuerdo con restricción de ingreso.
+
+![](ipo/output/regresion2.png)
+
+## Edad y nivel de acuerdo con que aumenta e desempleo
+
+![](ipo/output/regresion3.png)
+
+## Conclusión
+
+Al presentar una correlación y un efecto tan débil se rechaza la hipótesis propuesta para la investigación.
+
+Limitaciones:
+
+-   El estudio en el que se basó la presente investigación no era representativo.
+
+-   Faltó la construcción de un índice o una escala.
+
+-    Las variables no eran exactamente las mismas.
+
+-   Sesgo de deseabilidad social.

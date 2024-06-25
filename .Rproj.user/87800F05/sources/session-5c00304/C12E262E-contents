@@ -5,7 +5,7 @@ install.packages("pacman")
 pacman::p_load(dplyr, sjmisc, car, sjlabelled, stargazer, haven)
 
 #selección de variables
-proc_data <- elsoc_2021 %>% select(m0_edad, #Edad
+proc_data2 <- elsoc_2021 %>% select(m0_edad, #Edad
                                    r09, #Grado de simpatía por extranjeros que viven en Chile
                                    r11, #Grado de ansiedad por interacción con Extranjeros
                                    r12_03, #Grado de acuerdo: Chile pierde su identidad con la llegada de extranjeros 
@@ -16,17 +16,17 @@ proc_data <- elsoc_2021 %>% select(m0_edad, #Edad
                                    c37_05, #Grado de acuerdo: Restricciones ingreso de inmigrantes
                                    )
 #Descriptivos de las variables escogidas.
-frq(proc_data$m0_edad) 
-frq(proc_data$r09) 
-frq(proc_data$r11)
-frq(proc_data$r12_03)
-frq(proc_data$r12_04)
-frq(proc_data$r16)
-frq(proc_data$r18_01)
-frq(proc_data$r18_02)
-frq(proc_data$c37_05) #Al todas estar en un orden ascendente se decide no reordenar las categorías de las variables
+frq(proc_data2$m0_edad) 
+frq(proc_data2$r09) 
+frq(proc_data2$r11)
+frq(proc_data2$r12_03)
+frq(proc_data2$r12_04)
+frq(proc_data2$r16)
+frq(proc_data2$r18_01)
+frq(proc_data2$r18_02)
+frq(proc_data2$c37_05) #Al todas estar en un orden ascendente se decide no reordenar las categorías de las variables
 ##Se transformaran los -999, -888, -777 y -666 en NA
-proc_data <- proc_data %>% set_na(., na = c(-999, -888, -777, -666))
+proc_data2 <- proc_data2 %>% set_na(., na = c(-999, -888, -777, -666))
 ###Cambio de nombres de las variables
 proc_data <- proc_data %>% rename("edad" = m0_edad,
                                   "simpatia_extranjeros" = r09,
@@ -62,7 +62,8 @@ pacman::p_load(summarytools, # Tablas
                ggplot2) # Para la mayoría de los gráficos
 pacman::p_load(texreg, ggpubr)
 ###Tabla descriptiva
-summarytools::dfSummary(proc_data, plain.ascii = FALSE)
+tabla_1 <- summarytools::dfSummary(proc_data, plain.ascii = FALSE)
+
 ####Omisión de casos perdidos.
 proc_data_original <- proc_data #Primero para evitar cualquier error crítico se respalda la base datos.
 dim(proc_data)
@@ -75,13 +76,14 @@ graph1 <- proc_data %>% ggplot(aes(x = simpatia_extranjeros)) +
        x = "Simpatia por inmigrantes",
        y = "Frecuencia") +
   theme_bw()
+ggsave(graph1, file="ipo/output/graph1.png")
 graph2 <- proc_data %>% ggplot(aes(x=acuerdo_restriccion_inmigrantes)) +
   geom_bar(fill = "red") +
   labs(title = "Nivel de acuerdo con restringir el ingreso de inmigrantes al país",
        x = "Nivel de acuerdo", #Creo que el título del gráfico es suficientemente claro para dejar esta etiqueta así de simple
        y = "Frecuencia") +
   theme_bw()
-graph2
+ggsave(graph2, file="ipo/output/graph2.png")
 #Correlación de las variables.
 colSums(is.na(proc_data))
 sjPlot::tab_corr(proc_data, 
@@ -127,3 +129,24 @@ proc_data %>% ggplot(aes(x = simpatia_extranjeros)) +
        x = "Simpatia por inmigrantes",
        y = "Frecuencia") +
   theme_bw()
+colnames(proc_data)
+frq(proc_data$ansiedad_interaccion_inmg)
+frq(proc_data$acuerdo_perdida_de_identidad)
+frq(proc_data$acuerdo_aumento_desempleo)
+frq(proc_data$confianza_en_extranjeros)
+frq(proc_data$acceso_igualitario_salud)
+frq(proc_data$acuerdo_restriccion_inmigrantes)
+
+
+#Edad y Simpatía por inmigrantes
+
+![](ipo/output/regresion1.png)
+#Edad y nivel de acuerdo con restricción de ingreso.
+
+![](ipo/output/regresion2.png)
+#Edad y nivel de acuerdo con que aumenta e desempleo
+![](ipo/output/regresion3.png)
+
+## Gráfico II
+Se puede apreciar que la gran mayoría de chilenos está de acuerdo con las restricción de ingreso de migrantes al país.
+![](ipo/output/graph2.png)
