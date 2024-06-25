@@ -1,0 +1,12 @@
+---
+title: "Percepción de la inmigración en Chile"
+author: "Jacob Reyes A."
+format: revealjs
+editor: visual
+---
+
+# Introducción
+Esta breve investigación consistió en estudiar cómo la edad de los chilenos afecta la percepción que éstos tienen sobre la inmigración, bajo la hipótesis: **A mayor edad, la percepción negativa sobre la inmigración aumenta.** Para llevar a cabo este estudio se utilizaron los datos de El Estudio Longitudinal Social de Chile (ELSOC) aplicado en el 2021.
+
+# Descriptivos
+
