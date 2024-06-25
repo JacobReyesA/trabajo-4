@@ -150,3 +150,13 @@ frq(proc_data$acuerdo_restriccion_inmigrantes)
 ## Gráfico II
 Se puede apreciar que la gran mayoría de chilenos está de acuerdo con las restricción de ingreso de migrantes al país.
 ![](ipo/output/graph2.png)
+
+M <- cor(proc_data, use = "complete.obs")
+corrplot.mixed(M)
+pacman::p_load(dplyr, # Manipulacion datos
+               sjmisc, # Descriptivos
+               sjPlot, # Tablas
+               sjlabelled, #etiquetas
+               kableExtra, #Tablas
+               GGally, # Correlaciones
+               corrplot)

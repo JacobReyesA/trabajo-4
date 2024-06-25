@@ -49,7 +49,7 @@ Se puede apreciar que la gran mayoría de chilenos está de acuerdo con las rest
 
 # Asociación
 
-La correlación entre la variable "Edad" con el resto de variables es bastante baja, los coeficientes de correlación de Pearson varían entre 0.1 y 0.2. De todas formas es necesario mencionar que todas presentan un
+La correlación entre la variable "Edad" con el resto de variables es bastante baja, los coeficientes de correlación de Pearson varían entre 0.1 y 0.2. De todas formas es necesario mencionar que todas presentan un nivel de confianza del 99.9%, excepto una variable.
 
 ## Regresión lineal simple
 
@@ -71,10 +71,9 @@ Al presentar una correlación y un efecto tan débil se rechaza la hipótesis pr
 
 Limitaciones:
 
--   El estudio en el que se basó la presente investigación no era representativo.
-
 -   Faltó la construcción de un índice o una escala.
+
+-   El estudio en el que se basó la presente investigación no era representativo.
 
 -    Las variables no eran exactamente las mismas.
 
--   Sesgo de deseabilidad social.
