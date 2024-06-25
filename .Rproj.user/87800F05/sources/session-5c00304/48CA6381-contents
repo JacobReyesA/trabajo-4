@@ -1,5 +1,5 @@
 ---
-title: "Percepción de la inmigración en Chile: ¿La edad afecta la percepción sobre la inmigración?"
+title: "Percepción de la inmigración en Chile: ¿La edad influye en la percepción sobre la inmigración?"
 author: "Jacob Reyes A."
 format: revealjs
 editor: visual
@@ -49,7 +49,7 @@ Se puede apreciar que la gran mayoría de chilenos está de acuerdo con las rest
 
 # Asociación
 
-La correlación entre la variable "Edad" con el resto de variables es bastante baja, los coeficientes de correlación de Pearson varían entre 0.1 y 0.2. De todas formas es necesario mencionar que todas presentan un nivel de confianza del 99.9%, excepto una variable.
+La correlación entre la variable "Edad" con el resto de variables es bastante baja, los coeficientes de correlación de Pearson varían entre 0.1 y 0.2. De todas formas, es necesario mencionar que todas presentan un nivel de confianza del 99.9%, excepto una variable.
 
 ## Regresión lineal simple
 
